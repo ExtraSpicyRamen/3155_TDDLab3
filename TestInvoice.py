@@ -7,18 +7,17 @@ def products():
 
     return products
 
-def invoice():
+def test_CanCalculateTotalImpurePrice(products):
     invoice = Invoice()
-    return invoice
-
-def test_CanCalulateTotalImpurePrice(invoice, products):
     invoice.totalImpurePrice(products)
     assert invoice.totalImpurePrice(products) == 75
 
-def test_CanCalculateTotalDiscount(invoice, products):
+def test_CanCalculateTotalDiscount(products):
+    invoice = Invoice()
     invoice.totalDiscount(products)
     assert invoice.totalDiscount(products) == 5.62
 
-def test_CanCalculateTotalPurePrice(invoice, products):
+def test_CanCalculateTotalPurePrice(products):
+    invoice = Invoice()
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
